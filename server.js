@@ -1,6 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var passportGoogle = require('passport-google-oauth').OAuth2Strategy;
+// var config = require('./config');
 var PORT = process.env.PORT || 3000;
 
 // SET MONGOOSE TO LEVERAGE BUILT IN JS ES6 PROMOISES
@@ -16,6 +19,10 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
 // make public a static dir
 app.use(express.static('public'));
 
+// GOOGLE PASSPORT STRATEGIES
+app.use(passport.initialize());
+app.use(passport.session());
+
 // DB config w/ mongoose
 // mongoose.connect("MONGO LAB GOES HERE");
 mongoose.connect("mongodb://localhost/travlr");
@@ -29,6 +36,9 @@ db.once('open', function() {
 	console.log('Mongoose Connection Successful!');
 });
 
+// IMPORT ROUTES AND GIVE THE SERVER ACCES TO THEM
+var passportRoutes = require('./controllers/passport_controller');
+app.use('/', passportRoutes);
 // Routes
 var routes = require('./controllers/controller');
 app.use('/', routes);
