@@ -12,7 +12,7 @@ import {
 // var hashHistory = router.hashHistory;
 
 // var IndexRoute = router.IndexRoute;
-var Journal = require('../components/Journal');
+import Main from '../components/Main';
 
 
 // module.exports = (
@@ -27,8 +27,7 @@ module.exports = (
 	<Router>
 	    <div>
 
-	    <Route exact path="/" component={Journal}/>
-      	<Route path="about" component={Journal}/>
+	    <Route exact path="/" component={Main}/>
 
 	    </div>
   </Router>
