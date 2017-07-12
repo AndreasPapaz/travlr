@@ -1,6 +1,5 @@
 var React = require('react');
 
-
 class Journal extends React.Component {
 	constructor(props) {
 		super(props);
@@ -20,13 +19,14 @@ class Journal extends React.Component {
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<label>
-				Name:
+				Title:
 				<input type="text" value={this.state.value} onChange={this.handleChange} />
 				</label>
+				
 				<input type="submit" value="Submit" />
 			</form>
 		);
 	}
 }
 
-module.exports = Main;
+module.exports = Journal;
