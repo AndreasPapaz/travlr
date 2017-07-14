@@ -1,27 +1,20 @@
 var express = require('express');
 var router = express.Router();
+var passport = express.Router();
+var User = require('./../model/User');
 
-var JournalDB = require('../model/JournalDB');
 
-// TEST ROUTE
-// router.use('*', function(req, res) {
-// 	var dir = __dirname;
-// 	var dirSplit = dir.split('controllers');
-// 	dir = dirSplit[0];
-
-// 	res.sendFile(dir + '/public/index.html');
-// });
-
-router.get('/', function(req, res) {
-	Journal.find().exec(function(err, entry) {
+router.post('/register', function(req, res) {
+	User.register(new User({
+		email: req.body.email
+	}), req.body.password, function(err, user) {
 		if (err) {
-			console.log("err from logs " + err);
-		}
-		else {
-			res.render(index.html);
+			console.log(err);
+			res.send('User exists');
+		} else {
+			res.sender(user._id);
 		}
 	});
 });
-
 
 module.exports = router;

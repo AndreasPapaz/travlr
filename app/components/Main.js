@@ -1,26 +1,16 @@
-import React, {Component} from 'react';
-import Login from './Login';
-import GetService from './utils/getService';
+import React from 'react';
+import {Route, BrowserRouter as Router, IndexRoute, Link, Redirect, withRouter } from 'react-router';
 
-let verifyService = new GetService('/api/verify/');
+import Welcome from './children/Welcome';
+import Login from './children/register/Login';
+import Signup from './children/register/Signup';
 
-export default class Main extends Component {
-  getInitialState() {
-    return {}
-  }
-  componentWillMount() {
-    verifyService.getRoute().then(function(response) {
-            this.setState({
-                auth: response.auth,
-                googleId: response.googleId
-            });
-        }.bind(this));
-  }
-  render() {
-    return(
-      <div className='ui container'>
-        <Login />
-      </div>
-    );
-  }
+export default class Main extends React.Component{
+	render() {
+		return(
+			<div>
+				{this.props.children}
+			</div>
+		);
+	}
 }

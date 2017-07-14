@@ -1,35 +1,20 @@
-// var React = require('react');
-// var router = require('react-router');
-// var Route = router.Route;
-// var Router = router.Router;
-import React from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import React from 'react';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
-// var hashHistory = router.hashHistory;
-
-// var IndexRoute = router.IndexRoute;
 import Main from '../components/Main';
+import Welcome from '../components/children/Welcome';
+import Login from '../components/children/register/Login';
+import Signup from '../components/children/register/Signup';
 
 
-// module.exports = (
-// 	<Router history = {hashHistory}> <----- what is hashhistory????
-// 		<Route path='/' component={Journal}>
+export default (
 
-// 		</Route>
-// 	</Router>
-
-module.exports = (
-
-	<Router>
-	    <div>
-
-	    <Route exact path="/" component={Main}/>
-
-	    </div>
-  </Router>
+	<Router history={hashHistory}>
+		<Route path='/' component={Main}>
+			<IndexRoute path='/' component={Welcome}/>
+			<Route path='login' component={Login} />
+			<Route path='Signup' component={Signup} />
+		</Route>
+	</Router>
 
 );

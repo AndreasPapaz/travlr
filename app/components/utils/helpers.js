@@ -1,1 +1,7 @@
-// THIS IS WHERE WE ARE GOING TO MAKE API CALLS
+var axios = require('axios');
+
+var helper = {
+
+}
+
+module.exports = helper;
