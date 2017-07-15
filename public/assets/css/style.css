@@ -1,0 +1,16 @@
+form.ui.login-form {
+    position: absolute;
+    width: 250px;
+    top: 40%;
+    left: 50%;
+    margin-left: -125px;
+    z-index: 2;
+}
+
+.sign-up_btn {
+	width: 120px;
+}
+
+.ui.animated.button.sign-up_btn .hidden.content {
+    margin-top: -15px;
+}
