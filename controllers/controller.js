@@ -5,16 +5,20 @@ var User = require('./../model/User');
 
 
 router.post('/register', function(req, res) {
-	User.register(new User({
-		email: req.body.email
-	}), req.body.password, function(err, user) {
+
+	console.log("this is post : " + req.body);
+
+	var user = new User(req.body);
+
+	user.save(function(err, doc) {
 		if (err) {
-			console.log(err);
-			res.send('User exists');
+			res.send(err);
 		} else {
-			res.sender(user._id);
+			res.send(doc);
 		}
 	});
+
+
 });
 
 module.exports = router;

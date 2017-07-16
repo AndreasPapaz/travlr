@@ -38,12 +38,14 @@ app.use(express.static(__dirname + '/public'));
 
 
 // Passport
-app.use(session({ secret: "travlr", resave: true, saveUninitialized: true }));
+// app.use(session({ secret: "travlr", resave: true, saveUninitialized: true }));
 
-passport.use(user.createStrategy());
-passport.serializeUser(user.serializeUser());
-passport.deserializeUser(user.deserializeUser());
-
+// passport.use(user.createStrategy());
+// passport.serializeUser(user.serializeUser());
+// passport.deserializeUser(user.deserializeUser());
+require('./controllers/passport.js')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Routes
 var routes = require('./controllers/controller');

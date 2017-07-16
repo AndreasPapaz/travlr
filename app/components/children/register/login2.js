@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 
 class Login2 extends React.Component {
   constructor(props) {
@@ -24,10 +25,26 @@ class Login2 extends React.Component {
     console.log("CLICK");
     console.log(this.state.email);
     console.log(this.state.password);
-    this.props.setTerm(this.state.email);
-    this.props.setTerm(this.state.password);
-    this.setState({ email: "" });
-    this.setState({ password: "" });
+    // this.props.setTerm(this.state.email);
+    // this.props.setTerm(this.state.password);
+    // this.setState({ email: "" });
+    // this.setState({ password: "" });
+    var cred = {
+      email: this.state.email,
+      password: this.state.password
+    };
+
+//look up the axios route for this function and test data base, after add photos
+    axios.post('/register', cred).then(function(res) {
+      if (res.data === 'User already exisits') {
+        this.setState({
+          error: 'the user exits, please try again'
+        })
+      } else {
+        sessionStorage.setItem('do_good_id', res.data);
+        // this.context.router.push('main'); this may be the router to next page
+      }
+    }.bind(this))
   }
 
   render() {
