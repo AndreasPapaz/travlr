@@ -43,6 +43,7 @@
     "react-stormpath": "^2.0.1",
     "react-tap-event-plugin": "^2.0.1",
     "request": "^2.81.0",
+    "semantic-ui-react": "^0.71.0",
     "validator": "^6.2.0"
   },
   "devDependencies": {

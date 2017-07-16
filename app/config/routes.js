@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import Main from '../components/Main';
 import Welcome from '../components/children/Welcome';
-import Login from '../components/children/register/Login';
+import Login2 from '../components/children/register/login2';
 import Signup from '../components/children/register/Signup';
 
 
@@ -11,9 +11,9 @@ export default (
 
 	<Router history={hashHistory}>
 		<Route path='/' component={Main}>
-			<IndexRoute path='/' component={Welcome}/>
-			<Route path='login' component={Login} />
-			<Route path='Signup' component={Signup} />
+			<IndexRoute component={Welcome} />
+			<Route path='signup' component={Signup} />
+			<Route path='login' component={Login2} />
 		</Route>
 	</Router>
 
