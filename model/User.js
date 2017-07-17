@@ -1,17 +1,3 @@
-// var mongoose = require('mongoose');
-// var Schema = mongoose.Schema;
-// var passportLocalMongoose = require('passport-local-mongoose');
-
-// var UserSchema = new Schema({
-//     email: String,
-//     password: String
-// });
-
-// UserSchema.plugin(passportLocalMongoose);
-
-// module.exports = mongoose.model('User', UserSchema);
-
-
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
@@ -39,6 +25,8 @@ UserSchema.methods.validPassword = function(password) {
 	return bcrypt.compareSync(password, this.password);
 };
 
-var User = mongoose.model('User', UserSchema);
+// var User = mongoose.model('User', UserSchema);
 
-module.exports = User;
+// module.exports = User;
+
+module.exports = mongoose.model('User', UserSchema);
