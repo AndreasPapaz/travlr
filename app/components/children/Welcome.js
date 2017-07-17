@@ -7,7 +7,10 @@ export default class Welcome extends React.Component{
 			<div>
 				<h1>Welcome</h1>
 				<Link to='signup'>Sign Up</Link>
+				<br />
 				<Link to='login'>Login</Link>
+				<br />
+				<Link to='image'>Image</Link>
 			</div>
 		);
 	}

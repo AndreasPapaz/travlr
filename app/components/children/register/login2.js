@@ -1,5 +1,9 @@
 import React from "react";
 import axios from 'axios';
+// import ImagesUploader from 'react-images-uploader';
+// https://medium.com/ecmastack/uploading-files-with-react-js-and-node-js-e7e6b707f4ef
+// CLOUDINARY
+// https://scotch.io/tutorials/leveraging-react-for-easy-image-management-with-cloudinary
 
 class Login2 extends React.Component {
   constructor(props) {
@@ -53,7 +57,7 @@ class Login2 extends React.Component {
 
       <div className="panel panel-default">
         <div className="panel-heading">
-          <h3 className="panel-title text-center">Query</h3>
+          <h3 className="panel-title text-center">Profile</h3>
         </div>
         <div className="panel-body text-center">
 
@@ -91,6 +95,7 @@ class Login2 extends React.Component {
                 required
               />
 
+              <br />
               <br />
 
               <button

@@ -31,11 +31,11 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 // app.use(require('connect-multiparty')());
-// app.use(session({secret: 'super-secret'}));
 app.use(cookieParser());
 app.use(bodyParser.text());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 app.use(express.static(__dirname + '/public'));
+app.use('/static', express.static('./server/static'));
 
 
 // Passport
@@ -50,8 +50,6 @@ app.use(passport.session());
 app.use(flash());
 
 //Routes
-// var routes = require('./controllers/controller');
-// app.use('/', routes);
 require('./controllers/controller')(app, passport);
 
 //start server
