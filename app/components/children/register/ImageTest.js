@@ -5,9 +5,15 @@ import sha1 from 'sha1'
 import axios from 'axios'
 
 class ImageTest extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			images: []
+		}
+	}
 
 	uploadFile(files) {
-		
+
 		console.log("upload file: " + files[0]);
 
 		const image = files[0];
@@ -38,12 +44,35 @@ class ImageTest extends React.Component {
 				return;
 			}
 			console.log('Upload Complete ' + JSON.stringify(res.body));
+			console.log("this is the link you are looking for : " + res.body.secure_url);
+			const uploaded = res.body;
+
+			let updatedImages = Object.assign([], this.state.images);
+			updatedImages.push(uploaded);
+
+			this.setState({
+				images: updatedImages
+			});
 		});
 	}
 
 	render() {
+
+		const list = this.state.images.map((image, i) => {
+			return (
+				<li key={i}>
+					<img src={image.secure_url} />
+				</li>
+			)
+		})
+
 		return(
-			<Dropzone onDrop={this.uploadFile.bind(this)} />
+			<div>
+				<Dropzone onDrop={this.uploadFile.bind(this)} />
+					<ul>
+						{ list }
+					</ul>
+			</div>
 		)
 	}
 }
