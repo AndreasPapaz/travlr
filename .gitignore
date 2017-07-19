@@ -2,3 +2,4 @@
 node_modules
 
 # project files
+public/bundle.js
