@@ -1,27 +1,38 @@
-var express = require('express');
-var router = express.Router();
+var path = require('path');
+var User = require('./../model/User');
 
-var JournalDB = require('../model/JournalDB');
+module.exports = function(app, passport) {
 
-// TEST ROUTE
-// router.use('*', function(req, res) {
-// 	var dir = __dirname;
-// 	var dirSplit = dir.split('controllers');
-// 	dir = dirSplit[0];
 
-// 	res.sendFile(dir + '/public/index.html');
-// });
+	app.post('/dashboard', passport.authenticate('local', function(req, res) {
+		console.log("they are loggedin memebers");
+	}));
 
-router.get('/', function(req, res) {
-	Journal.find().exec(function(err, entry) {
-		if (err) {
-			console.log("err from logs " + err);
-		}
-		else {
-			res.render(index.html);
-		}
+	app.post('/register', function(req, res) {
+
+		console.log("this is post from register : " + req.body);
+
+		var user = new User(req.body);
+
+		user.save(function(err, doc) {
+			if (err) {
+				res.send(err);
+			} else {
+				res.send(doc);
+			}
+		});
 	});
-});
 
+	app.post('/auth/login', function(req, res) {
+		console.log("you hit the login path");
+	});
 
-module.exports = router;
+};
+
+function isLoggedIn(req, res, next) {
+	if (req.isAuthenticated()){
+		return next();
+	} else {
+		res.redirect('/passrate');
+	}
+}

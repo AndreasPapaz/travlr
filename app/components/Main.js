@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Image } from 'semantic-ui-react';
-import FormBox from './FormBox';
 
 export default class Main extends Component {
 
@@ -8,7 +7,7 @@ export default class Main extends Component {
     return(
         <div>
         <Image src='/assets/images/travlr_mainpage_large.jpg' fluid />
-        <FormBox />
+        	{this.props.children}
         </div>
     );
   }
