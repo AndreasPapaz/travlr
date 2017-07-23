@@ -18,7 +18,7 @@ export default class Login extends Component {
           <Button type='submit'>Submit</Button>
 
 
-          <Link to='signup'>
+          <Link to='/signup'>
             <Button className='sign-up_btn' animated='fade'>
               <Button.Content visible>
                 Sign-Up
