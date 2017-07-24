@@ -9,8 +9,9 @@ const UserSchema = new Schema({
     type: String,
     index: { unique: true }
   },
+  name: String,
   password: String,
-  name: String
+  img: String
 });
 
 
