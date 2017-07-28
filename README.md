@@ -6,19 +6,19 @@ Inspiration was from Instagram. The main goal was to allow a user to upload phot
 ##Image Demo
 
 Login Page
-![Login](http://imgur.com/oAamluV)
+![Login](http://i.imgur.com/oAamluV.png)
 
 Sign-Up
-![Sign-Up](http://imgur.com/8bNw0iR)
+![Sign-Up](http://i.imgur.com/8bNw0iR.png)
 
 Profile
-![Profile](http://imgur.com/2LAxnyO)
+![Profile](http://i.imgur.com/2LAxnyO.png)
 
 Entry
-![Profile](http://imgur.com/mwRHDMk)
+![Profile](http://i.imgur.com/mwRHDMk.png)
 
 Journal
-![Dashboard](http://imgur.com/dsgEK8p)
+![Dashboard](http://i.imgur.com/dsgEK8p.png)
 
 
 ## Technologies used
