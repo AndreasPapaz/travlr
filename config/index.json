@@ -1,0 +1,5 @@
+{
+  "dbUri": "mongodb://localhost/travlr-app",
+  "jwtSecret": "travlr"
+}
+

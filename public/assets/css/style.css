@@ -1,3 +1,7 @@
+body{
+	background: url('/assets/images/travlr_mainpage_large.jpg') no-repeat center center fixed;
+}
+
 form.ui.login-form {
     position: absolute;
     width: 250px;
@@ -11,6 +15,61 @@ form.ui.login-form {
 	width: 120px;
 }
 
+.homeTitle{
+    margin-top: 20px;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 100px;
+    padding: 80px;
+    color: #db5325;
+}
+
+.centerProf {
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+    margin
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+     color: #db5325;
+}
+
+.innerTitle {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+}
+
 .ui.animated.button.sign-up_btn .hidden.content {
     margin-top: -15px;
+}
+
+.ui.huge.header {
+    z-index: 2;
+    position: absolute;
+    left: 350px;
+    top: 30px;
+    font-size: 130px;
+}
+
+.entry{
+    margin: 0;
+    width: 50%
+}
+
+div.entry{
+    margin: 0;
+    padding: 0;
+}
+
+.entryPhoto{
+    float: left;
+}
+
+.signupPhoto{
+    margin: 0 auto;
+    width: 50%;
 }

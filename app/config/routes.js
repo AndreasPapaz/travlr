@@ -1,20 +1,27 @@
 import React from 'react'
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory, Switch, Redirect } from 'react-router';
 
-
-// var IndexRoute = router.IndexRoute;
 import Main from '../components/Main';
-import Login from '../components/Login';
-import Signup from '../components/Signup';
-// import JournalEntry from '../components/children/dashboard/JournalEntry';
-
+import LoginPage from '../components/children/register/LoginPage';
+import SignUpPage from '../components/children/register/SignUpPage';
+import Dashboard from '../components/Dashboard';
+import Bio from '../components/children/dashboard/Bio';
+import EntryPage from '../components/children/dashboard/EntryPage';
+import Journal from '../components/children/dashboard/Journal';
 
 export default (
 
-	<Router history={hashHistory}>
+	<Router history={browserHistory}>
 		<Route path='/' component={Main}>
-			<IndexRoute component={Login} />
-			<Route path='signup' component={Signup} />
+			<Route path='dashboard' component={Dashboard}>
+				<Route path='bio' component={Bio} />
+				<Route path='entry' component={EntryPage} />
+				<Route path='journal' component={Journal} />
+				<IndexRoute component={Bio} />
+			</Route>
+			<Route path='login' component={LoginPage} />
+			<Route path='signup' component={SignUpPage} />
+			<IndexRoute component={LoginPage} />
 		</Route>
 	</Router>
 
